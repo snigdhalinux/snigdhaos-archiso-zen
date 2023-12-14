@@ -9,7 +9,10 @@ dialog
 dosfstools
 edk2-shell
 efibootmgr
+git
+grep
 grub
+gparted
 inetutils
 intel-ucode
 linux-firmware
@@ -55,6 +58,7 @@ wpa_supplicant
 xfsprogs
 xorg-server
 xorg-xinit
+yay
 
 
 ###### S N I G D H A O S ######
@@ -69,7 +73,15 @@ xf86-video-vmware
 qemu-guest-agent
 spice-vdagent
 virtualbox-guest-utils
+xdg-dbus-proxy
+xdg-desktop-portal
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+xdg-user-dirs
+xdg-user-dirs-gtk
+xdg-utils
 
+catppuccin-gtk-theme-macchiato
 snigdhaos-grub-theme
 snigdhaos-fish-config
 snigdhaos-calamares
@@ -81,3 +93,35 @@ snigdhaos-system-installation
 snigdhaos-mirrorlist
 snigdhaos-keyring
 snigdhaos-neofetch-config
+snigdhaos-welcome
+tela-icon-theme-git
+
+gnome-autoar
+gnome-backgrounds
+gnome-bluetooth-3.0
+gnome-calculator
+gnome-color-manager
+gnome-control-center
+gnome-desktop
+gnome-desktop-4
+gnome-desktop-common
+gnome-disk-utility
+gnome-font-viewer
+gnome-icon-theme
+gnome-icon-theme-symbolic
+gnome-keyring
+gnome-menus
+gnome-music
+gnome-online-accounts
+gnome-session
+gnome-settings-daemon
+gnome-shell
+gnome-shell-extension-arch-update
+gnome-shell-extension-blur-my-shell
+gnome-shell-extension-dash-to-dock
+gnome-shell-extension-gtk4-desktop-icons-ng
+gnome-shell-extension-vitals-git
+gnome-shell-extensions
+gnome-terminal
+gnome-text-editor
+gnome-tweaks
