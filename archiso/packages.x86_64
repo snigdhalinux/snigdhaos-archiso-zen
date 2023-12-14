@@ -59,3 +59,15 @@ xorg-xinit
 ###### S N I G D H A O S ######
 chaotic-keyring
 chaotic-mirrorlist
+blackarch-keyring
+blackarch-mirrorlist
+hyperv
+xf86-video-fbdev
+open-vm-tools
+xf86-video-vmware
+qemu-guest-agent
+spice-vdagent
+virtualbox-guest-utils
+
+snigdhaos-grub-theme
+snigdhaos-fish-config
