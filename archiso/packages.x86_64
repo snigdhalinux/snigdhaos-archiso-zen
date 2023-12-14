@@ -3,6 +3,7 @@ arch-install-scripts
 base
 broadcom-wl-dkms
 btrfs-progs
+chromium
 dhcpcd
 dialog
 dosfstools
@@ -71,3 +72,12 @@ virtualbox-guest-utils
 
 snigdhaos-grub-theme
 snigdhaos-fish-config
+snigdhaos-calamares
+snigdhaos-calamares-config
+snigdhaos-gnome-config
+snigdhaos-gnome-background
+snigdhaos-system-config
+snigdhaos-system-installation
+snigdhaos-mirrorlist
+snigdhaos-keyring
+snigdhaos-neofetch-config
