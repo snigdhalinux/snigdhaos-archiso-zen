@@ -1,0 +1,16 @@
+root:x:0:root
+sys:x:3:bin,snigdha
+network:x:90:snigdha
+power:x:98:snigdha
+adm:x:999:snigdha
+wheel:x:998:snigdha
+uucp:x:987:snigdha
+optical:x:990:snigdha
+rfkill:x:983:snigdha
+video:x:986:snigdha
+storage:x:988:snigdha
+audio:x:995:snigdha
+users:x:985:snigdha
+nopasswdlogin:x:966:snigdha
+autologin:x:967:snigdha
+snigdha:x:1000:
