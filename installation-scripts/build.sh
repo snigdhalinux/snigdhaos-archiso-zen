@@ -14,7 +14,7 @@ echo
 	desktop="gnome"
 	dmDesktop="gnome"
 
-	snVersion='rolling'
+	snigdhaosVersion='rolling'
 
 	isoLabel='snigdhaos-'$snigdhaosVersion'-x86_64.iso'
 
