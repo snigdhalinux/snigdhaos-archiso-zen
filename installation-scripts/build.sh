@@ -1,26 +1,11 @@
 #!/bin/bash
-#set -e
-##################################################################################################################
-# Author	:	Erik Dubois
-# Website	:	https://www.erikdubois.be
-# Website	:	https://www.arcolinux.info
-# Website	:	https://www.arcolinux.com
-# Website	:	https://www.arcolinuxd.com
-# Website	:	https://www.arcolinuxb.com
-# Website	:	https://www.arcolinuxiso.com
-# Website	:	https://www.arcolinuxforum.com
-##################################################################################################################
-#
-#   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
-#
-##################################################################################################################
+# THANKS TO ARCOLINUX
+
 echo
-echo "################################################################## "
 tput setaf 2
 echo "Phase 1 : "
 echo "- Setting General parameters"
 tput sgr0
-echo "################################################################## "
 echo
 
 	#Let us set the desktop"
@@ -29,15 +14,15 @@ echo
 	desktop="gnome"
 	dmDesktop="gnome"
 
-	athenaVersion='rolling'
+	snVersion='rolling'
 
-	isoLabel='athena-'$athenaVersion'-x86_64.iso'
+	isoLabel='snigdhaos-'$snigdhaosVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 73-1"
-	buildFolder=$HOME"/athena-build"
-	outFolder=$HOME"/Athena-Out"
-        # outFolder="/mnt/hgfs/VirtualShare/Athena-Out"
+	buildFolder=$HOME"/snigdhaos-build"
+	outFolder=$HOME"/snigdhaos-Out"
+        # outFolder="/mnt/hgfs/VirtualShare/snigdhaos-Out"
         archisoVersion=$(sudo pacman -Q archiso)
 	
 	# If you are ready to use your personal repo and personal packages
@@ -47,42 +32,40 @@ echo
 	# 3. add your applications to the file packages-personal-repo.x86_64
 
 	personalrepo=false
-
-	echo "################################################################## "
+	
 	echo "Building the desktop                   : "$desktop
-	echo "Building version                       : "$athenaVersion
+	echo "Building version                       : "$snigdhaosVersion
 	echo "Iso label                              : "$isoLabel
 	echo "Do you have the right archiso version? : "$archisoVersion
 	echo "What is the required archiso version?  : "$archisoRequiredVersion
 	echo "Build folder                           : "$buildFolder
 	echo "Out folder                             : "$outFolder
-	echo "################################################################## "
 
 	if [ "$archisoVersion" == "$archisoRequiredVersion" ]; then
 		tput setaf 2
-		echo "##################################################################"
+		echo
 		echo "Archiso has the correct version. Continuing ..."
-		echo "##################################################################"
+		echo
 		tput sgr0
 	else
 	tput setaf 1
-	echo "###################################################################################################"
+	echo
 	echo "You need to install the correct version of Archiso"
 	echo "Use 'sudo downgrade archiso' to do that"
 	echo "or update your system"
-	echo "###################################################################################################"
+	echo
 	tput sgr0
 	fi
 
 echo
-echo "################################################################## "
+
 tput setaf 2
 echo "Phase 2 :"
 echo "- Checking if archiso is installed"
 echo "- Saving current archiso version to readme"
 echo "- Making mkarchiso verbose"
 tput sgr0
-echo "################################################################## "
+
 echo
 
 	package="archiso"
@@ -99,23 +82,23 @@ echo
 		#checking which helper is installed
 		#if pacman -Qi yay &> /dev/null; then
 
-		#	echo "################################################################"
+		#	echo
 		#	echo "######### Installing with yay"
-		#	echo "################################################################"
+		#	echo
 		#	yay -S --noconfirm $package
 
 		#elif pacman -Qi trizen &> /dev/null; then
 
-		#	echo "################################################################"
+		#	echo
 		#	echo "######### Installing with trizen"
-		#	echo "################################################################"
+		#	echo
 		#	trizen -S --noconfirm --needed --noedit $package
 
 		#elif pacman -Qi paru &> /dev/null; then
 
-        #                echo "################################################################"
+        #                echo
         #                echo "######### Installing with paru"
-        #                echo "################################################################"
+        #                echo
         #                paru -S --noconfirm --needed $package
 		
         #        fi
@@ -123,15 +106,15 @@ echo
 		# Just checking if installation was successful
 		if pacman -Qi $package &> /dev/null; then
 
-			echo "################################################################"
+			echo
 			echo "#########  "$package" has been installed"
-			echo "################################################################"
+			echo
 
 		else
 
-			echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+			echo
 			echo "!!!!!!!!!  "$package" has NOT been installed"
-			echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+			echo
 			exit 1
 		fi
 
@@ -145,13 +128,13 @@ echo
 	sudo sed -i 's/quiet="y"/quiet="n"/g' /usr/bin/mkarchiso
 
 echo
-echo "################################################################## "
+
 tput setaf 2
 echo "Phase 3 :"
 echo "- Deleting the build folder if one exists"
 echo "- Copying the Archiso folder to build folder"
 tput sgr0
-echo "################################################################## "
+
 echo
 
 	echo "Deleting the build folder if one exists - takes some time"
@@ -163,7 +146,7 @@ echo
 	cp -r ../archiso $buildFolder/archiso
 
 echo
-echo "################################################################## "
+
 tput setaf 2
 echo "Phase 4 :"
 echo "- Deleting any files in /etc/skel"
@@ -172,7 +155,7 @@ echo "- Removing the old packages.x86_64 file from build folder"
 echo "- Copying the new packages.x86_64 file to the build folder"
 echo "- Add our own personal repo + add your packages to packages-personal-repo.x86_64"
 tput sgr0
-echo "################################################################## "
+
 echo
 
 	echo "Deleting any files in /etc/skel"
@@ -181,7 +164,7 @@ echo
 
 	echo "Getting the last version of bashrc in /etc/skel"
 	echo
-	wget https://raw.githubusercontent.com/Athena-OS/athena-iso/main/archiso/airootfs/etc/skel/.bashrc -O $buildFolder/archiso/airootfs/etc/skel/.bashrc
+	wget https://raw.githubusercontent.com/snigdhalinux/snigdhaos-archiso-zen/master/archiso/airootfs/etc/skel/.bashrc -O $buildFolder/archiso/airootfs/etc/skel/.bashrc
 
 	echo "Removing the old packages.x86_64 file from build folder"
 	rm $buildFolder/archiso/packages.x86_64
@@ -207,30 +190,30 @@ echo
 	fi
 
 echo
-echo "################################################################## "
+
 tput setaf 2
 echo "Phase 5 : "
 echo "- Changing all references"
 echo "- Adding time to /etc/dev-rel"
 tput sgr0
-echo "################################################################## "
+
 echo
 
 	#Setting variables
 
 	#profiledef.sh
-	oldname1='iso_name="athena"'
-	newname1='iso_name="athena"'
+	oldname1='iso_name="snigdhaos"'
+	newname1='iso_name="snigdhaos"'
 
-	oldname2='iso_label="athena"'
-	newname2='iso_label="athena"'
+	oldname2='iso_label="snigdhaos"'
+	newname2='iso_label="snigdhaos"'
 
-	oldname3='Athena OS'
-	newname3='Athena OS'
+	oldname3='Snigdha OS'
+	newname3='Snigdha OS'
 
 	#hostname
-	oldname4='Athena'
-	newname4='Athena'
+	oldname4='snigdhaos'
+	newname4='snigdhaos'
 
 	#sddm.conf user-session
 	oldname5='Session=gnome'
@@ -251,24 +234,22 @@ echo
 
 
 echo
-echo "###########################################################"
 tput setaf 2
 echo "Phase 6 :"
 echo "- Cleaning the cache from /var/cache/pacman/pkg/"
 tput sgr0
-echo "###########################################################"
 echo
 
 	echo "Cleaning the cache from /var/cache/pacman/pkg/"
 	yes | sudo pacman -Scc
 
 echo
-echo "################################################################## "
+
 tput setaf 2
 echo "Phase 7 :"
 echo "- Building the iso - this can take a while - be patient"
 tput sgr0
-echo "################################################################## "
+
 echo
 
 	[ -d $outFolder ] || mkdir $outFolder
@@ -278,54 +259,45 @@ echo
 
 
 echo
-echo "###################################################################"
 tput setaf 2
 echo "Phase 8 :"
 echo "- Creating checksums"
 echo "- Copying pkglist"
 tput sgr0
-echo "###################################################################"
 echo
-
 	cd $outFolder
-
 	echo "Creating checksums for : "$isoLabel
-	echo "##################################################################"
 	echo
 	echo "Building md5sum"
-	echo "########################"
+	echo
 	md5sum $outFolder/$isoLabel | tee $outFolder/$isoLabel.md5
 	echo "Building sha1sum"
-	echo "########################"
+	echo
 	sha1sum $outFolder/$isoLabel | tee $outFolder/$isoLabel.sha1
 	echo "Building sha256sum"
-	echo "########################"
+	echo
 	sha256sum $outFolder/$isoLabel | tee $outFolder/$isoLabel.sha256
 	echo "Building sha512sum"
-	echo "########################"
+	echo
 	sha512sum $outFolder/$isoLabel | tee $outFolder/$isoLabel.sha512
 	echo
 	echo "Moving pkglist.x86_64.txt"
-	echo "########################"
+	echo
 	cp $buildFolder/iso/arch/pkglist.x86_64.txt  $outFolder/$isoLabel".pkglist.txt"
 	
 echo
-echo "##################################################################"
 tput setaf 2
 echo "Phase 9 :"
 echo "- Making sure we start with a clean slate next time"
 tput sgr0
-echo "################################################################## "
-echo
 
+echo
 	echo "Deleting the build folder if one exists - takes some time"
 	[ -d $buildFolder ] && sudo rm -rf $buildFolder
-
 echo
-echo "##################################################################"
+echo
 tput setaf 2
 echo "DONE"
 echo "- Check your out folder :"$outFolder
 tput sgr0
-echo "################################################################## "
 echo
