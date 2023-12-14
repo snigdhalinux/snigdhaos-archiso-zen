@@ -54,3 +54,8 @@ wpa_supplicant
 xfsprogs
 xorg-server
 xorg-xinit
+
+
+###### S N I G D H A O S ######
+chaotic-keyring
+chaotic-mirrorlist
