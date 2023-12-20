@@ -81,7 +81,6 @@ xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
 
-catppuccin-gtk-theme-macchiato
 snigdhaos-grub-theme
 snigdhaos-fish-config
 snigdhaos-calamares
@@ -94,7 +93,6 @@ snigdhaos-mirrorlist
 snigdhaos-keyring
 snigdhaos-neofetch-config
 snigdhaos-welcome
-tela-icon-theme-git
 
 gnome-autoar
 gnome-backgrounds
