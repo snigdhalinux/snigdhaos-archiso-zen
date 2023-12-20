@@ -1,223 +1,100 @@
+#
 # ~/.bashrc
-
-# Append "$1" to $PATH when not already in.
-append_path () {
-    case ":$PATH:" in
-        *:"$1":*)
-            ;;
-        *)
-            PATH="${PATH:+$PATH:}$1"
-    esac
-}
-append_path "$HOME/bin"
-append_path "$HOME/.local/bin"
-
-### EXPORT ### Should be before the change of the shell
-export EDITOR=/usr/bin/nano
-export VISUAL='nano'
-export HISTCONTROL=ignoreboth:erasedups:ignorespace
-HISTSIZE=100000
-HISTFILESIZE=2000000
-shopt -s histappend
-export PAGER='most'
-
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
-
-# COLOURS! YAAAY!
-export TERM=xterm-256color
-
-export SHELL=$(which bash)
-
-#export BFETCH_INFO="pfetch"
-#export BFETCH_ART="$HOME/.local/textart/fetch/unix.textart"
-#export PF_INFO="Unix Genius"
-
-#export BFETCH_INFO="curl --silent --location 'wttr.in/rome?0pq'"
-#export BFETCH_ART="printf \"\033[35m\"; figlet -f Bloody Spooky"
-#export BFETCH_COLOR="$HOME/.local/textart/color/icon/ghosts.textart"
-
-#export BFETCH_INFO="exa -la"
-#export BFETCH_ART="$HOME/.local/textart/fetch/pacman-maze.textart"
-#export BFETCH_COLOR="$HOME/.local/textart/color/icon/pacman.textart"
-
-export BFETCH_INFO="pfetch"
-export BFETCH_ART="cowsay '<3 Snigdha OS'"
-export BFETCH_COLOR="$HOME/.local/textart/color/icon/panes.textart"
-
+#
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# switch shell
-[[ $(ps --no-header --pid=$PPID --format=comm) != "${SHELL#/usr/bin/}" && -z ${BASH_EXECUTION_STRING} && ${SHELL} != "/usr/bin/bash" ]] && exec $SHELL
+alias ls='ls -l --color=auto'
+alias grep='grep --color=auto'
 
-#Configure zoxide for bash
-eval "$(zoxide init bash)"
-
-if [[ $(tty) == */dev/tty* ]]; then
-  PS1="\e[1;32m[HQ:\e[1;31m$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev) | \u\e[1;32m]\n[>]\[\e[1;36m\]\$(pwd) $ \[\e[0m\]"
-else
-  PS1="\e[1;32m┌──[HWK⚜️\e[1;31m$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)🔥\u\e[1;32m]\n└──╼[😈]\[\e[1;36m\]\$(pwd) $ \[\e[0m\]"
-fi
-
-# Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
-
-# Bash aliases
-if [ -f ~/.snigdhaos_bash_aliases ]; then
-  . ~/.snigdhaos_bash_aliases
-fi
-
-# Change up a variable number of directories
-# E.g:
-#   cu   -> cd ../
-#   cu 2 -> cd ../../
-#   cu 3 -> cd ../../../
-function cu {
-    local count=$1
-    if [ -z "${count}" ]; then
-        count=1
-    fi
-    local path=""
-    for i in $(seq 1 ${count}); do
-        path="${path}../"
-    done
-    cd $path
-}
-
-
-# Open all modified files in vim tabs
-function vimod {
-    vim -p $(git status -suall | awk '{print $2}')
-}
-
-# Open files modified in a git commit in vim tabs; defaults to HEAD. Pop it in your .bashrc
-# Examples:
-#     virev 49808d5
-#     virev HEAD~3
-function virev {
-    commit=$1
-    if [ -z "${commit}" ]; then
-      commit="HEAD"
-    fi
-    rootdir=$(git rev-parse --show-toplevel)
-    sourceFiles=$(git show --name-only --pretty="format:" ${commit} | grep -v '^$')
-    toOpen=""
-    for file in ${sourceFiles}; do
-      file="${rootdir}/${file}"
-      if [ -e "${file}" ]; then
-        toOpen="${toOpen} ${file}"
-      fi
-    done
-    if [ -z "${toOpen}" ]; then
-      echo "No files were modified in ${commit}"
-      return 1
-    fi
-    vim -p ${toOpen}
-}
-
-# 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
-function gitPrompt {
-  command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
-}
-
-# Colours have names too. Stolen from Arch wiki
-txtblk='\[\e[0;30m\]' # Black - Regular
-txtred='\[\e[0;31m\]' # Red
-txtgrn='\[\e[0;32m\]' # Green
-txtylw='\[\e[0;33m\]' # Yellow
-txtblu='\[\e[0;34m\]' # Blue
-txtpur='\[\e[0;35m\]' # Purple
-txtcyn='\[\e[0;36m\]' # Cyan
-txtwht='\[\e[0;37m\]' # White
-bldblk='\[\e[1;30m\]' # Black - Bold
-bldred='\[\e[1;31m\]' # Red
-bldgrn='\[\e[1;32m\]' # Green
-bldylw='\[\e[1;33m\]' # Yellow
-bldblu='\[\e[1;34m\]' # Blue
-bldpur='\[\e[1;35m\]' # Purple
-bldcyn='\[\e[1;36m\]' # Cyan
-bldwht='\[\e[1;37m\]' # White
-unkblk='\[\e[4;30m\]' # Black - Underline
-undred='\[\e[4;31m\]' # Red
-undgrn='\[\e[4;32m\]' # Green
-undylw='\[\e[4;33m\]' # Yellow
-undblu='\[\e[4;34m\]' # Blue
-undpur='\[\e[4;35m\]' # Purple
-undcyn='\[\e[4;36m\]' # Cyan
-undwht='\[\e[4;37m\]' # White
-bakblk='\[\e[40m\]'   # Black - Background
-bakred='\[\e[41m\]'   # Red
-badgrn='\[\e[42m\]'   # Green
-bakylw='\[\e[43m\]'   # Yellow
-bakblu='\[\e[44m\]'   # Blue
-bakpur='\[\e[45m\]'   # Purple
-bakcyn='\[\e[46m\]'   # Cyan
-bakwht='\[\e[47m\]'   # White
-txtrst='\[\e[0m\]'    # Text Reset
-
-# Prompt colours
-atC="${txtpur}"
-nameC="${txtpur}"
-hostC="${txtpur}"
-pathC="${txtgrn}"
-gitC="${txtpur}"
-pointerC="${txtgrn}"
-normalC="${txtwht}"
-
-# Red name for root
-if [ "${UID}" -eq "0" ]; then
-  nameC="${txtred}"
-fi
-
-#shopt
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
-
-# # ex = EXtractor for all kinds of archives
-# # usage: ex <file>
-ex ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   tar xf $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
-
-export PROMPT_COMMAND='source ~/.bashrc no-repeat-flag'
-
-buffer_clean(){
-  free -h && sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches' && free -h
-}
+PS1="\e[0;31m┌──[\e[0;31m\u\e[0;36m❖\e[0;32m SNIGDHAOS\e[0;31m]\n└──╼\e[0;32m[$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)]\[\e[0;31m\]\$(pwd) $ \[\e[0m\]"
 
 if [[ $1 != no-repeat-flag && -z $NO_REPETITION ]]; then
   neofetch
 fi
 
-[[ $1 != no-repeat-flag && -f /usr/share/blesh/ble.sh ]] && source /usr/share/blesh/ble.sh
+
+# Snigdha OS Useful Aliases
+alias c='clear'
+alias cl='clear'
+alias clr='clear'
+alias q='exit'
+alias qt='exit'
+alias ll='ls -la --color=auto'
+alias sync='sudo pacman -Syy'
+alias install='sudo pacman -S'
+alias uninstall='sudo pacman -Rs'
+alias clean='sudo pacman -Rns $(pacman -Qtdq)'
+alias dir='dir --color=auto'
+alias update='sudo pacman -Sy'
+alias upgrade='sudo pacman -Syyu'
+alias listpack='sudo pacman -Qq'
+# alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+# Debian -> Arch
+alias apt='man pacman'
+alias apt-get='man pacman'
+alias please='sudo'
+alias tb='nc termbin.com 9999'
+alias helpme='cht.sh --shell'
+alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
+
+
+## a quick way to get out of current directory ##
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+# Ping Website/Server
+alias p5='ping -c 5'
+alias p10='ping -c 10'
+alias p15='ping -c 15'
+alias fp="ping -c 100 -s.2"
+
+#Command Will be found I think!
+alias cl="clear"
+alias ckear="clear"
+alias clr="clear"
+
+# Git commands
+alias gs="git status"
+alias gst="git status -sb"
+alias gl="git log"
+alias ga="git add"
+alias gaa="git add -A"
+alias gal="git add ."
+alias gall="git add ."
+alias gca="git commit -a"
+alias gc="git commit -m"
+alias gcot="git checkout"
+alias gchekout="git checkout"
+alias gchckout="git checkout"
+alias gckout="git checkout"
+alias go="git push -u origin"
+alias gsh='git stash'
+alias gw='git whatchanged'
+alias gitlg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias nah="git clean -df && git checkout -- ."
+
+# History commands
+alias h="history"
+alias h1="history 10"
+alias h2="history 20"
+alias h3="history 30"
+alias hgrep='history | grep'
+
+# Confirmation
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+alias rm='rm -I --preserve-root'
+
+# Parenting changing perms on /
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
