@@ -82,7 +82,7 @@ xdg-user-dirs-gtk
 xdg-utils
 
 snigdhaos-grub-theme
-snigdhaos-fish-config
+###snigdhaos-fish-config
 snigdhaos-calamares
 snigdhaos-calamares-config
 snigdhaos-gnome-config
