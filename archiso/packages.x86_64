@@ -89,7 +89,7 @@ snigdhaos-gnome-config
 snigdhaos-gnome-background
 snigdhaos-system-config
 snigdhaos-system-installation
-snigdhaos-mirrorlist
+###snigdhaos-mirrorlist
 snigdhaos-keyring
 snigdhaos-neofetch-config
 snigdhaos-welcome
