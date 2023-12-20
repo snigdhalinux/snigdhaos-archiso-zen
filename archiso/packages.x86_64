@@ -93,6 +93,7 @@ snigdhaos-mirrorlist
 snigdhaos-keyring
 snigdhaos-neofetch-config
 snigdhaos-welcome
+bash-completion-git
 
 gnome-autoar
 gnome-backgrounds
