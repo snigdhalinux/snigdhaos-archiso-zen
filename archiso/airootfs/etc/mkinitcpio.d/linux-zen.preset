@@ -1,12 +1,8 @@
-# mkinitcpio preset file for the kernel
+# mkinitcpio preset file for the 'linux-zen' package on archiso
 
-#ALL_config='/etc/mkinitcpio.conf'
+PRESETS=('archiso')
+
 ALL_kver='/boot/vmlinuz-linux-zen'
-ALL_microcode=(/boot/*-ucode.img)
+ALL_config='/etc/mkinitcpio.conf'
 
-PRESETS=('default' 'fallback')
-
-default_image="/boot/initramfs-linux-zen.img"
-
-fallback_image="/boot/initramfs-linux-zen-fallback.img"
-fallback_options="-S autodetect"
+archiso_image="/boot/initramfs-linux-zen.img"
