@@ -27,6 +27,9 @@ mkinitcpio-nfs-utils
 mkinitcpio-openswap
 mtools
 nano
+nerd-fonts-noto-sans-mono-extended
+ttf-meslo-nerd-font-powerlevel10k
+ttf-font-awesome
 net-tools
 netctl
 networkmanager
@@ -50,6 +53,7 @@ squashfs-tools
 sudo
 syslinux
 testdisk
+ttf-twemoji-git
 usbutils
 vi
 wireless_tools
