@@ -35,7 +35,9 @@ netctl
 networkmanager
 network-manager-applet
 noto-fonts
+noto-fonts-cjk
 noto-fonts-emoji
+nerd-fonts-noto-sans-mono-extended
 nfs-utils
 nss-mdns
 ntfs-3g
@@ -63,7 +65,6 @@ xfsprogs
 xorg-server
 xorg-xinit
 yay
-neofetch
 
 
 ###### S N I G D H A O S ######
