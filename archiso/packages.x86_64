@@ -30,16 +30,11 @@ nano
 nerd-fonts-noto-sans-mono-extended
 ttf-meslo-nerd-font-powerlevel10k
 ttf-font-awesome
-net-tools
-netctl
-networkmanager
-network-manager-applet
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 nerd-fonts-noto-sans-mono-extended
 nfs-utils
-nss-mdns
 ntfs-3g
 ntfsprogs
 ntp
@@ -103,6 +98,18 @@ snigdhaos-welcome
 bash-completion-git
 stacer
 bibata-cursor-theme
+avahi
+nss-mdns
+mobile-broadband-provider-info
+modemmanager
+networkmanager
+network-manager-applet
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+networkmanager-vpnc
+openresolv
+rtl8821cu-morrownr-dkms-git
 
 gdm
 gnome-autoar
