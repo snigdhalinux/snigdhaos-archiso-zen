@@ -28,6 +28,7 @@ mkinitcpio-nfs-utils
 mkinitcpio-openswap
 mtools
 nano
+neofetch
 net-tools
 netctl
 networkmanager
