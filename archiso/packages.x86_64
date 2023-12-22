@@ -4,6 +4,7 @@ base
 bat
 broadcom-wl-dkms
 btrfs-progs
+chromium
 dhcpcd
 dialog
 dosfstools
@@ -16,13 +17,17 @@ grub
 grub-customizer
 inetutils
 intel-ucode
+linux
+linux-atm
 linux-firmware
+linux-firmware-marvell
 linux-zen
 linux-zen-headers
 lsd
 lvm2
 mesa
 mesa-utils
+mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
 mkinitcpio-openswap
@@ -107,6 +112,7 @@ bash-completion-git
 stacer
 bibata-cursor-theme
 
+############ GNOME SPECIFIED ############
 gdm
 gnome-autoar
 gnome-backgrounds
@@ -136,3 +142,24 @@ gnome-shell-extensions
 gnome-terminal
 gnome-text-editor
 gnome-tweaks
+
+
+########## Calamares Dependencies ##########
+ckbcomp
+xkeyboard-config
+upower
+kcoreaddons5
+kconfig5
+ki18n5
+kservice5
+kwidgetsaddons5
+kpmcore
+boost-libs
+libpwquality
+squashfs-tools
+plasma-framework5
+hwinfo
+qt5-xmlpatterns
+adobe-source-han-sans-jp-fonts
+adobe-source-han-sans-kr-fonts
+adobe-source-han-sans-cn-fonts
