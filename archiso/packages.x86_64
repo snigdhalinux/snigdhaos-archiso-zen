@@ -27,17 +27,18 @@ mesa
 mesa-utils
 mkinitcpio
 mkinitcpio-archiso
+mkinitcpio-firmware
 mkinitcpio-nfs-utils
 mkinitcpio-openswap
 mtools
 nano
-neofetch
 net-tools
 netctl
 networkmanager
 network-manager-applet
 nfs-utils
 noto-fonts
+noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
@@ -117,6 +118,7 @@ gnome-autoar
 gnome-backgrounds
 gnome-bluetooth-3.0
 gnome-calculator
+gnome-characters
 gnome-color-manager
 gnome-control-center
 gnome-desktop
