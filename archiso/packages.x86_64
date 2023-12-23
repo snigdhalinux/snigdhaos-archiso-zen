@@ -32,6 +32,7 @@ mkinitcpio-nfs-utils
 mkinitcpio-openswap
 mtools
 nano
+nerd-fonts
 net-tools
 netctl
 networkmanager
