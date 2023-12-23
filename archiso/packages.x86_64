@@ -32,15 +32,12 @@ mkinitcpio-nfs-utils
 mkinitcpio-openswap
 mtools
 nano
-nerd-fonts
 net-tools
 netctl
 networkmanager
 network-manager-applet
 nfs-utils
 noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
 nss-mdns
 ntfs-3g
 ntfsprogs
