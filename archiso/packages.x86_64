@@ -101,6 +101,7 @@ snigdhaos-brave-config
 snigdhaos-grub-theme
 snigdhaos-calamares
 snigdhaos-calamares-config
+snigdhaos-gnome-spec
 snigdhaos-gnome-config
 snigdhaos-gnome-background
 snigdhaos-system-config
@@ -114,35 +115,7 @@ bibata-cursor-theme
 
 ############ GNOME SPECIFIED ############
 gdm
-gnome-autoar
-gnome-backgrounds
-gnome-bluetooth-3.0
-gnome-calculator
-gnome-characters
-gnome-color-manager
-gnome-control-center
-gnome-desktop
-gnome-desktop-4
-gnome-desktop-common
-gnome-disk-utility
-gnome-font-viewer
-gnome-icon-theme
-gnome-icon-theme-symbolic
-gnome-keyring
-gnome-menus
-gnome-online-accounts
-gnome-session
-gnome-settings-daemon
-gnome-shell
-gnome-shell-extension-arch-update
-gnome-shell-extension-blur-my-shell
-gnome-shell-extension-dash-to-dock
-gnome-shell-extension-gtk4-desktop-icons-ng
-gnome-shell-extension-vitals-git
-gnome-shell-extensions
-gnome-terminal
-gnome-text-editor
-gnome-tweaks
+
 
 
 ########## Calamares Dependencies ##########
