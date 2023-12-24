@@ -22,9 +22,7 @@ lsd
 lvm2
 mesa
 mesa-utils
-mkinitcpio
 mkinitcpio-archiso
-mkinitcpio-firmware
 mkinitcpio-nfs-utils
 mkinitcpio-openswap
 mtools
@@ -41,25 +39,24 @@ ntp
 openbsd-netcat
 orca
 os-prober
-paru
 pavucontrol
 pipewire
 pipewire-pulse
 polkit
 pv
 reflector
-rate-mirrors
 rsync
 rtl8821cu-morrownr-dkms-git
 sof-firmware
 squashfs-tools
+stacer
 sudo
 syslinux
 testdisk
 ufw
 usbutils
-vnstat
 vi
+vnstat
 wget
 which
 wireless_tools
@@ -67,9 +64,11 @@ wireplumber
 wpa_supplicant
 xclip
 xfsprogs
-zoxide
 xorg-server
 xorg-xinit
+zoxide
+
+gdm-prime
 
 ###### S N I G D H A O S ######
 chaotic-keyring
@@ -93,8 +92,4 @@ snigdhaos-gnome-ui
 snigdhaos-xdg-gnome
 snigdhaos-welcome
 bash-completion-git
-stacer
-
-############ GNOME SPECIFIED ############
-gdm
 
