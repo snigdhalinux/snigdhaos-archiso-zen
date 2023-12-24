@@ -15,10 +15,7 @@ gparted
 grub
 inetutils
 intel-ucode
-linux
-linux-atm
 linux-firmware
-linux-firmware-marvell
 linux-zen
 linux-zen-headers
 lsd
@@ -37,7 +34,6 @@ netctl
 networkmanager
 network-manager-applet
 nfs-utils
-noto-fonts
 nss-mdns
 ntfs-3g
 ntfsprogs
