@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="snigdha"
+iso_name="snigdhaos"
 iso_label="SNIGDHA-OS"
 iso_publisher="SnigdhaOS <https://snigdhalinux.github.io>"
 iso_application="Snigdha OS Live/Rescue CD"
