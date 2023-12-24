@@ -7,7 +7,7 @@
 alias ls='ls -l --color=auto'
 alias grep='grep --color=auto'
 
-PS1="\e[0;31m┌──[\e[0;31m\u\e[0;36m❖\e[0;32m SNIGDHAOS\e[0;31m]\n└──╼\e[0;32m[$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)]\[\e[0;31m\]\$(pwd) $ \[\e[0m\]"
+PS1="\e[0;31m┌──[\e[0;31m\u\e[0;00m@\e[0;32msnigdhaos\e[0;31m]\n└──╼\e[0;32m[$(ip -4 addr | grep -v '127.0.0.1' | grep -v 'secondary' | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | sed -z 's/\n/|/g;s/|\$/\n/' | rev | cut -c 2- | rev)]\[\e[0;31m\]\$(pwd) $ \[\e[0m\]"
 
 if [[ $1 != no-repeat-flag && -z $NO_REPETITION ]]; then
   neofetch
@@ -29,6 +29,7 @@ alias dir='dir --color=auto'
 alias update='sudo pacman -Sy'
 alias upgrade='sudo pacman -Syyu'
 alias listpack='sudo pacman -Qq'
+alias del='sudo rm -rf'
 # alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # Debian -> Arch
@@ -97,4 +98,3 @@ alias rm='rm -I --preserve-root'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
-
