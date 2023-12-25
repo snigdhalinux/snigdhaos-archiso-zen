@@ -45,6 +45,7 @@ pipewire-pulse
 polkit
 pv
 reflector
+rate-mirrors
 rsync
 rtl8821cu-morrownr-dkms-git
 sof-firmware
