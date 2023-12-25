@@ -81,14 +81,14 @@ snigdhaos-brave-config
 snigdhaos-grub-theme
 snigdhaos-calamares
 snigdhaos-calamares-config
-######snigdhaos-gnome-spec
+#######snigdhaos-gnome-spec
 snigdhaos-gnome-config
 snigdhaos-gnome-background
 snigdhaos-system-config
 snigdhaos-system-installation
 snigdhaos-keyring
 snigdhaos-neofetch-config
-snigdhaos-vb-dependency
+#######snigdhaos-vb-dependency
 #######snigdhaos-gnome-ui
 snigdhaos-xdg-gnome
 snigdhaos-welcome
@@ -114,6 +114,8 @@ adobe-source-han-sans-kr-fonts
 adobe-source-han-sans-cn-fonts
 
 ################### Snigdha OS Gnome Specific ###################
+eog
+nautilus
 gnome-autoar
 gnome-backgrounds
 gnome-bluetooth-3.0
@@ -143,3 +145,13 @@ gnome-shell-extensions
 gnome-terminal
 gnome-text-editor
 gnome-tweaks
+
+
+########VM#########
+hyperv
+xf86-video-fbdev
+open-vm-tools
+xf86-video-vmware
+qemu-guest-agent
+spice-vdagent
+virtualbox-guest-utils
