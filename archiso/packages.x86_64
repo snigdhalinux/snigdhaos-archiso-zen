@@ -1,3 +1,4 @@
+accountsservice
 amd-ucode
 arch-install-scripts
 base
@@ -15,9 +16,11 @@ gparted
 grub
 inetutils
 intel-ucode
+linux
 linux-firmware
 linux-zen
 linux-zen-headers
+lsb-release
 lsd
 lvm2
 mesa
@@ -135,17 +138,10 @@ gnome-music
 gnome-online-accounts
 gnome-session
 gnome-settings-daemon
-gnome-shell
-gnome-shell-extension-arch-update
-gnome-shell-extension-compiz-windows-effect-git
-gnome-shell-extension-dash-to-dock
-gnome-shell-extension-desktop-icons-ng-git
-gnome-shell-extension-vitals-git
-gnome-shell-extensions
 gnome-terminal
 gnome-text-editor
 gnome-tweaks
-
+polkit-gnome
 
 ########VM#########
 hyperv
