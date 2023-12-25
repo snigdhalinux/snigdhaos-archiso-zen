@@ -72,6 +72,7 @@ zoxide
 gdm-prime
 
 ###### S N I G D H A O S ######
+archlinux-keyring
 chaotic-keyring
 chaotic-mirrorlist
 blackarch-keyring
@@ -80,7 +81,7 @@ snigdhaos-brave-config
 snigdhaos-grub-theme
 snigdhaos-calamares
 snigdhaos-calamares-config
-snigdhaos-gnome-spec
+######snigdhaos-gnome-spec
 snigdhaos-gnome-config
 snigdhaos-gnome-background
 snigdhaos-system-config
@@ -88,7 +89,7 @@ snigdhaos-system-installation
 snigdhaos-keyring
 snigdhaos-neofetch-config
 snigdhaos-vb-dependency
-snigdhaos-gnome-ui
+#######snigdhaos-gnome-ui
 snigdhaos-xdg-gnome
 snigdhaos-welcome
 
@@ -111,3 +112,34 @@ qt5-xmlpatterns
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
 adobe-source-han-sans-cn-fonts
+
+################### Snigdha OS Gnome Specific ###################
+gnome-autoar
+gnome-backgrounds
+gnome-bluetooth-3.0
+gnome-boxes
+gnome-calculator
+gnome-characters
+gnome-color-manager
+gnome-control-center
+gnome-desktop
+gnome-desktop-4
+gnome-desktop-common
+gnome-icon-theme
+gnome-icon-theme-symbolic
+gnome-keyring
+gnome-menus
+gnome-music
+gnome-online-accounts
+gnome-session
+gnome-settings-daemon
+gnome-shell
+gnome-shell-extension-arch-update
+gnome-shell-extension-compiz-windows-effect-git
+gnome-shell-extension-dash-to-dock
+gnome-shell-extension-desktop-icons-ng-git
+gnome-shell-extension-vitals-git
+gnome-shell-extensions
+gnome-terminal
+gnome-text-editor
+gnome-tweaks
