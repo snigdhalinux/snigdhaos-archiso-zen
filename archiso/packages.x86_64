@@ -5,6 +5,7 @@ base
 bat
 broadcom-wl-dkms
 btrfs-progs
+dhclient
 dhcpcd
 dialog
 dosfstools
@@ -16,6 +17,7 @@ gparted
 grub
 inetutils
 intel-ucode
+iwd
 linux
 linux-firmware
 linux-zen
@@ -98,6 +100,7 @@ snigdhaos-neofetch-config
 snigdhaos-vb-dependency
 snigdhaos-xdg-gnome
 snigdhaos-welcome
+snigdhaos-icon
 
 ######## snigdhaos calamares dependency ########
 ckbcomp
