@@ -68,6 +68,7 @@ orca
 paru
 polkit
 reflector
+rate-mirrors
 ufw
 vnstat
 wget
@@ -80,13 +81,11 @@ zoxide
 #################################################
 chaotic-keyring
 chaotic-mirrorlist
-blackarch-keyring
-blackarch-mirrorlist
-snigdhaos-keyring
 
 #################################################
 ################ SNIGDHA OS #####################
 #################################################
+gdm
 snigdhaos-brave-config
 snigdhaos-calamares
 snigdhaos-calamares-config
