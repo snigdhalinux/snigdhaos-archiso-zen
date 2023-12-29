@@ -25,5 +25,4 @@ file_permissions=(
   ["/etc/grub.d/40_custom"]="0:0:755"
   ["/etc/NetworkManager/dispatcher.d/09-timezone"]="0:0:755"
   ["/usr/local/bin/snigdhaos-ucode"]="0:0:755"
-  ["/usr/local/bin/snigdhaos-snapper"]="0:0:755"
 )
